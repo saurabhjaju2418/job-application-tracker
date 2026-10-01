@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="280" viewBox="0 0 900 280" role="img" aria-labelledby="title desc">
+  <title id="title">Northstar — a clearer view of what’s next</title>
+  <desc id="desc">An animated preview of a calm job search dashboard, with a gently growing progress line.</desc>
+  <style>
+    @keyframes draw { from { stroke-dashoffset: 260; } to { stroke-dashoffset: 0; } }
+    @keyframes breathe { 0%,100% { opacity: .45; transform: scale(.88); } 50% { opacity: 1; transform: scale(1.12); } }
+    @keyframes sweep { 0% { transform: translateX(-235px); } 100% { transform: translateX(0); } }
+    .line { stroke-dasharray: 260; stroke-dashoffset: 260; animation: draw 2.4s cubic-bezier(.2,.7,.25,1) .25s infinite alternate; }
+    .pulse { transform-box: fill-box; transform-origin: center; animation: breathe 1.8s ease-in-out infinite; }
+    .progress { animation: sweep 3.8s cubic-bezier(.4,0,.2,1) infinite alternate; }
+    @media (prefers-reduced-motion: reduce) { .line,.pulse,.progress { animation: none; } .line { stroke-dashoffset: 0; } }
+  </style>
+  <rect width="900" height="280" rx="18" fill="#f8f8f3"/>
+  <rect x="1" y="1" width="898" height="278" rx="17" fill="none" stroke="#e8ebe3"/>
+  <circle cx="838" cy="20" r="145" fill="#f0f2e8"/>
+  <rect x="48" y="44" width="30" height="30" rx="9" fill="#e7f0e8"/>
+  <path d="M63 51l2.2 7 7.1 2.1-7.1 2.2-2.2 7-2.1-7-7.1-2.2 7.1-2.1z" fill="#52735c"/>
+  <text x="88" y="64" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#28322a">northstar</text>
+  <text x="48" y="132" font-family="Georgia,serif" font-size="32" fill="#343a32">A clearer view of what’s next.</text>
+  <text x="49" y="159" font-family="Arial,sans-serif" font-size="13" fill="#81877d">Keep every opportunity, conversation, and next step in one place.</text>
+  <text x="49" y="219" font-family="Arial,sans-serif" font-size="10" letter-spacing="1" fill="#99a094">YOUR SEARCH</text>
+  <rect x="135" y="210" width="233" height="7" rx="4" fill="#e8ece4"/>
+  <g class="progress"><rect x="135" y="210" width="126" height="7" rx="4" fill="#719071"/></g>
+  <text x="378" y="218" font-family="Arial,sans-serif" font-size="11" fill="#748071">momentum, not perfection</text>
+  <rect x="548" y="45" width="295" height="188" rx="13" fill="#fff" stroke="#e6e9e2"/>
+  <text x="568" y="66" font-family="Arial,sans-serif" font-size="10" letter-spacing="1" fill="#9a9f95">APPLICATIONS</text>
+  <text x="568" y="105" font-family="Georgia,serif" font-size="30" fill="#30372f">06</text>
+  <rect x="756" y="63" width="67" height="22" rx="11" fill="#edf4eb"/>
+  <circle cx="769" cy="74" r="3" fill="#6b8d6a"/>
+  <text x="779" y="78" font-family="Arial,sans-serif" font-size="10" fill="#678064">in motion</text>
+  <path d="M568 132H822M568 156H822M568 180H822" stroke="#eff1ec"/>
+  <path class="line" d="M571 174L612 169L653 164L694 151L735 144L776 132L817 121" fill="none" stroke="#739174" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#739174"><circle cx="571" cy="174" r="2.5"/><circle cx="612" cy="169" r="2.5"/><circle cx="653" cy="164" r="2.5"/><circle cx="694" cy="151" r="2.5"/><circle cx="735" cy="144" r="2.5"/><circle cx="776" cy="132" r="2.5"/></g>
+  <circle class="pulse" cx="817" cy="121" r="6" fill="#739174"/><circle cx="817" cy="121" r="2" fill="#fff"/>
+  <text x="568" y="211" font-family="Arial,sans-serif" font-size="9" letter-spacing="1" fill="#a0a69b">ONE STEP AT A TIME</text>
+</svg>
+
