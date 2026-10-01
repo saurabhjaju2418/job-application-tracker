@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { ArrowDown, ArrowRight, Bell, BriefcaseBusiness, CalendarDays, Check, ChevronDown, CircleHelp, Clock3, Command, LayoutGrid, List, MoreHorizontal, Plus, Search, Settings2, Sparkles, TrendingUp, X } from "lucide-react";
 
 type Stage = "Applied" | "Interview" | "Offer" | "Rejected";
@@ -27,8 +27,7 @@ export default function Home() {
   useEffect(() => { try { const saved = localStorage.getItem("northstar-jobs"); if (saved) setJobs(JSON.parse(saved)); } catch {} setReady(true); }, []);
   useEffect(() => { if (ready) localStorage.setItem("northstar-jobs", JSON.stringify(jobs)); }, [jobs, ready]);
   const visible = useMemo(() => jobs.filter(j => (stage === "All applications" || j.stage === stage) && `${j.company} ${j.role} ${j.location}`.toLowerCase().includes(query.toLowerCase())), [jobs, query, stage]);
-  const addJob = (e: React.FormEvent) => { e.preventDefault(); if (!draft.company.trim() || !draft.role.trim()) return; const initials = draft.company.slice(0, 1).toUpperCase(); setJobs([{ ...draft, id: crypto.randomUUID(), date: new Intl.DateTimeFormat("en-US", { month: "short", day: "2-digit", year: "numeric" }).format(new Date()), color: "#2d6a58", initials }, ...jobs]); setDraft(blank); setModal(false); };
-  const counts = stages.map(s => ({ stage: s, count: jobs.filter(j => j.stage === s).length }));
+  const addJob = (e: FormEvent) => { e.preventDefault(); if (!draft.company.trim() || !draft.role.trim()) return; const initials = draft.company.slice(0, 1).toUpperCase(); setJobs([{ ...draft, id: crypto.randomUUID(), date: new Intl.DateTimeFormat("en-US", { month: "short", day: "2-digit", year: "numeric" }).format(new Date()), color: "#2d6a58", initials }, ...jobs]); setDraft(blank); setModal(false); };
 
   return <main className="shell">
     <aside className="sidebar">
